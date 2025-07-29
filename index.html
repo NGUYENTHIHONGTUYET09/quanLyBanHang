@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Nguyên liệu & Doanh thu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Quản lý Nguyên liệu & Doanh thu</h1>
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showTab('danhmuc')">Danh mục nguyên liệu</button>
+            <button onclick="showTab('doanhthu')">Doanh thu</button>
+            <button onclick="showTab('chiphi')">Tính toán chi phí</button>
+        </div>
+        <div class="main">
+            <div id="danhmuc" class="tab">
+                <h2>Danh mục nguyên liệu</h2>
+                <select id="optionDanhMuc">
+                    <option>Nguyên liệu chính</option>
+                    <option>Bao bì</option>
+                    <option>Phát sinh</option>
+                </select>
+                <button onclick="addRow('nguyenlieuTable')">Thêm nguyên liệu</button>
+                <table id="nguyenlieuTable">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên nguyên liệu</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                            <th>Tổng tiền</th>
+                            <th>Ghi chú</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="doanhthu" class="tab" style="display:none">
+                <h2>Doanh thu</h2>
+                <button onclick="addRow('doanhthuTable')">Thêm doanh thu</button>
+                <table id="doanhthuTable">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Ngày tháng năm</th>
+                            <th>Mặt hàng đã bán</th>
+                            <th>Giá</th>
+                            <th>Tổng tiền bán được</th>
+                            <th>Chi phí mua nguyên liệu</th>
+                            <th>Phí phát sinh</th>
+                            <th>Thành tiền sau khi trừ chi phí</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="chiphi" class="tab" style="display:none">
+                <h2>Tính toán chi phí</h2>
+                <button onclick="addRow('quyTable')">Thêm quỹ đầu tư</button>
+                <table id="quyTable">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên người góp</th>
+                            <th>Số tiền góp</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="thongke">
+                    <p>Thống kê tiền đã chi mua nguyên liệu: <span id="chiNguyenLieu">0</span></p>
+                    <p>Thống kê tiền đã bán: <span id="tienBan">0</span></p>
+                    <p>Thống kê tiền lời sau khi trừ chi phí: <span id="tienLoi">0</span></p>
+                    <p>
+                        Tính lương cho nhân viên:<br>
+                        Số lượng nhân viên: <input type="number" id="soNhanVien" value="1" min="1" style="width:60px;">
+                        <button onclick="tinhLuong()">Tính lương</button>
+                        <span id="luongNhanVien"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
