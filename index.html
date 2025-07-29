@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <title>Quản lý Nguyên liệu & Doanh thu</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Quản lý Nguyên liệu & Doanh thu</h1>
     <div class="container">
@@ -17,6 +19,7 @@
             <div id="danhmuc" class="tab">
                 <h2>Danh mục nguyên liệu</h2>
                 <select id="optionDanhMuc">
+                    <option>Tất cả</option>
                     <option>Nguyên liệu chính</option>
                     <option>Bao bì</option>
                     <option>Phát sinh</option>
@@ -32,6 +35,7 @@
                             <th>Tổng tiền</th>
                             <th>Ghi chú</th>
                             <th>Thao tác</th>
+                            <th>Danh mục</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -40,6 +44,7 @@
                             <td colspan="4" style="text-align:right;font-weight:bold">Tổng tiền nguyên liệu:</td>
                             <td id="tongTienNguyenLieu">0</td>
                             <td colspan="2"></td>
+                            <td></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -75,7 +80,8 @@
             <div id="chiphi" class="tab" style="display:none">
                 <h2>Tính toán chi phí</h2>
                 <button onclick="addRow('quyTable')">Thêm quỹ đầu tư</button>
-                <button onclick="autoAll()" style="margin-left:10px;background:#28a745;color:#fff;border:none;padding:8px 16px;border-radius:5px;">Auto</button>
+                <button onclick="autoAll()"
+                    style="margin-left:10px;background:#28a745;color:#fff;border:none;padding:8px 16px;border-radius:5px;">Auto</button>
                 <table id="quyTable">
                     <thead>
                         <tr>
@@ -96,6 +102,8 @@
                 </table>
                 <div class="thongke">
                     <p>Thống kê tiền đã chi mua nguyên liệu: <span id="chiNguyenLieu">0</span></p>
+                    <div id="thongkeChiTiet" style="margin-top:8px;"></div>
+                    <p>Thống kê chi phí phát sinh: <span id="thongkePhatSinh">0</span></p>
                     <p>Thống kê tiền đã bán: <span id="tienBan">0</span></p>
                     <p>Thống kê tiền lời sau khi trừ chi phí: <span id="tienLoi">0</span></p>
                     <p>Tổng quỹ đầu tư: <span id="tongQuyDauTu">0</span></p>
@@ -113,4 +121,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
