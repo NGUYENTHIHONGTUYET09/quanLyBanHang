@@ -35,6 +35,13 @@
                         </tr>
                     </thead>
                     <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" style="text-align:right;font-weight:bold">Tổng tiền nguyên liệu:</td>
+                            <td id="tongTienNguyenLieu">0</td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             <div id="doanhthu" class="tab" style="display:none">
@@ -47,6 +54,7 @@
                             <th>Ngày tháng năm</th>
                             <th>Mặt hàng đã bán</th>
                             <th>Giá</th>
+                            <th>Số lượng</th>
                             <th>Tổng tiền bán được</th>
                             <th>Chi phí mua nguyên liệu</th>
                             <th>Phí phát sinh</th>
@@ -55,11 +63,19 @@
                         </tr>
                     </thead>
                     <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="text-align:right;font-weight:bold">Tổng tiền bán được:</td>
+                            <td id="tongTienBanDuoc">0</td>
+                            <td colspan="4"></td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             <div id="chiphi" class="tab" style="display:none">
                 <h2>Tính toán chi phí</h2>
                 <button onclick="addRow('quyTable')">Thêm quỹ đầu tư</button>
+                <button onclick="autoAll()" style="margin-left:10px;background:#28a745;color:#fff;border:none;padding:8px 16px;border-radius:5px;">Auto</button>
                 <table id="quyTable">
                     <thead>
                         <tr>
@@ -70,11 +86,21 @@
                         </tr>
                     </thead>
                     <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="text-align:right;font-weight:bold">Tổng quỹ đầu tư:</td>
+                            <td id="tongQuyFooter">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
                 </table>
                 <div class="thongke">
                     <p>Thống kê tiền đã chi mua nguyên liệu: <span id="chiNguyenLieu">0</span></p>
                     <p>Thống kê tiền đã bán: <span id="tienBan">0</span></p>
                     <p>Thống kê tiền lời sau khi trừ chi phí: <span id="tienLoi">0</span></p>
+                    <p>Tổng quỹ đầu tư: <span id="tongQuyDauTu">0</span></p>
+                    <p>Tiền gốc: <span id="tienGoc">0</span></p>
+                    <p>Tiền còn lại (gốc + lãi): <span id="tienConLai">0</span></p>
                     <p>
                         Tính lương cho nhân viên:<br>
                         Số lượng nhân viên: <input type="number" id="soNhanVien" value="1" min="1" style="width:60px;">
